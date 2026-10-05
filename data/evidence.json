@@ -1,0 +1,152 @@
+[
+  {
+    "repo": "hybrid-log-classifier",
+    "tier": "A",
+    "domain": "three-tier log classification / incident grouping",
+    "gate": {
+      "tests_passed": 16,
+      "tests_failed": 0,
+      "pytest_exit": 0,
+      "ci": "verified in prior CI",
+      "docker": "verified in prior CI"
+    },
+    "headline": [
+      {
+        "label": "tests passing",
+        "value": "16",
+        "command": "pytest -q"
+      }
+    ],
+    "rows": [
+      {
+        "metric": "tests passing",
+        "value": 16,
+        "command": "pytest -q"
+      }
+    ],
+    "source": "verified current repository state"
+  },
+  {
+    "repo": "multimodal-financial-assistant",
+    "tier": "A",
+    "domain": "multimodal extraction / grounded RAG",
+    "gate": {
+      "tests_passed": 6,
+      "tests_failed": 0,
+      "pytest_exit": 0,
+      "ci": "verified in prior CI",
+      "docker": "verified in prior CI"
+    },
+    "headline": [
+      {
+        "label": "tests passing",
+        "value": "6",
+        "command": "pytest -q"
+      }
+    ],
+    "rows": [
+      {
+        "metric": "tests passing",
+        "value": 6,
+        "command": "pytest -q"
+      }
+    ],
+    "source": "verified current repository state"
+  },
+  {
+    "repo": "kay-kay",
+    "tier": "A",
+    "domain": "small REST gateway / spend governance",
+    "gate": {
+      "tests_passed": 3,
+      "tests_failed": 0,
+      "pytest_exit": 0,
+      "ci": "workflow configured",
+      "docker": "not claimed"
+    },
+    "headline": [
+      {
+        "label": "tests passing",
+        "value": "3",
+        "command": "pytest -q"
+      }
+    ],
+    "rows": [
+      {
+        "metric": "tests passing",
+        "value": 3,
+        "command": "pytest -q"
+      },
+      {
+        "metric": "provider fallback",
+        "value": "yes",
+        "command": "pytest -q"
+      }
+    ],
+    "source": "verified current repository state"
+  },
+  {
+    "repo": "megaproject",
+    "tier": "S",
+    "domain": "sandboxed tool-calling boundary",
+    "gate": {
+      "tests_passed": 3,
+      "tests_failed": 0,
+      "pytest_exit": 0,
+      "ci": "workflow configured",
+      "docker": "not claimed"
+    },
+    "headline": [
+      {
+        "label": "tests passing",
+        "value": "3",
+        "command": "pytest -q"
+      }
+    ],
+    "rows": [
+      {
+        "metric": "tests passing",
+        "value": 3,
+        "command": "pytest -q"
+      },
+      {
+        "metric": "allowed tools",
+        "value": 2,
+        "command": "inspect src/megaproject/tools.py"
+      }
+    ],
+    "source": "verified current repository state"
+  },
+  {
+    "repo": "recoup",
+    "tier": "S",
+    "domain": "deterministic reconciliation core",
+    "gate": {
+      "tests_passed": 5,
+      "tests_failed": 0,
+      "pytest_exit": 0,
+      "ci": "workflow configured",
+      "docker": "not claimed"
+    },
+    "headline": [
+      {
+        "label": "tests passing",
+        "value": "5",
+        "command": "pytest -q"
+      }
+    ],
+    "rows": [
+      {
+        "metric": "tests passing",
+        "value": 5,
+        "command": "pytest -q"
+      },
+      {
+        "metric": "money representation",
+        "value": "integer paise",
+        "command": "inspect src/recoup/core.py"
+      }
+    ],
+    "source": "verified current repository state"
+  }
+]
