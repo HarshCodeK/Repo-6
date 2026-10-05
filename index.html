@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harsh Kharavle — systems that prove themselves</title>
+<meta name="description" content="Portfolio of Harsh Paresh Kharavle: Five selected repositories, one standard - every claim has the command that reproduces it. Software engineer building control planes for AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/house.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Harsh Paresh Kharavle",
+ "url":"https://github.com/HarshCodeK","sameAs":["https://github.com/HarshCodeK","https://www.linkedin.com/in/harsh-k-422932284/"],
+ "jobTitle":"Software Engineer (fresher)","knowsAbout":["Python","FastAPI","Django","TypeScript","React","SQLite","PostgreSQL","LLM systems","trust boundaries","control planes"]}
+</script>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <span class="name">Harsh Kharavle</span>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#how">How I Work</a>
+    <a href="resume.html">Resume</a>
+    <a href="https://github.com/HarshCodeK">GitHub</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <span class="chip ok">open to SDE / AI engineering roles</span>
+    <h1>I build <span class="accent">control planes</span> where trust is engineered, not claimed.</h1>
+    <p class="lead">Five selected repositories, one standard. Every published claim is tied to the current repository state.
+    Every repo has tests and explicit limitations. Nothing is described as production-grade.</p>
+    <p class="for">B.Tech CSE fresher. Python, TypeScript, Django, FastAPI, React, SQLite/PostgreSQL.
+    I build systems where AI can triage but cannot move money, where double-booking is structurally impossible,
+    and where every number on this page traces back to a file in a repository.</p>
+    <div class="cta">
+      <a class="btn primary" href="resume.html">Resume <span class="arrow">→</span></a>
+      <a class="btn" href="https://github.com/HarshCodeK">github.com/HarshCodeK</a>
+    </div>
+
+    <div class="hero-stats" style="margin-top:48px">
+      <div class="stat-group">
+        <span class="stat-num" id="stat-repos">5</span>
+        <span class="stat-label">repositories</span>
+      </div>
+      <div class="stat-group">
+        <span class="stat-num" id="stat-tests">33</span>
+        <span class="stat-label">tests passing</span>
+      </div>
+      <div class="stat-group">
+        <span class="stat-num" id="stat-tiers">0</span>
+        <span class="stat-label">evidence verified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ EVIDENCE WALL ═══ -->
+  <section id="evidence">
+    <h2>Evidence wall</h2>
+    <p class="sub">Rendered from the profile evidence manifest, which records the verified repository state.
+    The build refuses to render a number that has no source file behind it.</p>
+    <div id="wall" class="evidence"></div>
+  </section>
+
+  <!-- ═══ WORK ═══ -->
+  <section id="work">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h2 style="margin-bottom:0">Work</h2>
+      <div class="tier-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="S">S — Flagships</button>
+        <button class="filter-btn" data-filter="A">A — Cross-Domain</button>
+      </div>
+    </div>
+    <p class="sub">Five selected repositories. Each has a small, explainable architecture and explicit limits
+    on a whiteboard. Every number on this page traces to a command.</p>
+
+    <!-- S TIER -->
+    <div style="margin-bottom:16px">
+      <div class="chip tier-S">S — Flagships</div>
+    </div>
+    <div class="grid" style="margin-bottom:32px">
+
+      <article class="panel featured reveal" data-tier="S">
+        <div class="content">
+          <h3><a href="https://github.com/HarshCodeK/recoup">recoup</a> <span class="tier-badge s">S</span></h3>
+          <p>A deterministic payment reconciliation control plane. Normalizes transactions from 5 sources,
+          auto-matches with a rule engine + probabilistic matching, classifies exceptions, triages with an LLM
+          that can <strong>refuse</strong> but cannot touch money, and keeps recovery authorization in a deterministic policy gate.</p>
+          <div class="tech">
+            <span>Python</span><span>Pydantic</span><span>SQLite</span><span>5 tests</span><span>integer paise</span>
+          </div>
+          <a class="link" href="https://github.com/HarshCodeK/recoup">View repository <span class="arrow">→</span></a>
+        </div>
+        <div class="visual">
+          <div class="code-block">
+            <span class="cm">// the invariant that matters</span><br>
+            <span class="kw">class</span> <span class="fn">RecoveryGate</span>:<br>
+            &nbsp;&nbsp;<span class="cm"># LLM can triage, can suggest,</br>
+            &nbsp;&nbsp;# but cannot execute a recovery action.</span><br>
+            &nbsp;&nbsp;<span class="kw">def</span> <span class="fn">gate</span>(decision):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> decision.amount > CAP:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"BLOCKED"</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel reveal reveal-delay-1" data-tier="S">
+        <h3><a href="https://github.com/HarshCodeK/megaproject">megaproject</a> <span class="tier-badge s">S</span></h3>
+        <p>A sandboxed tool-calling boundary. Paths are canonicalized before containment checks, and only read/list tools are exposed. This is an application-level path boundary, not OS isolation.</p>
+        <div class="tech">
+          <span>Python</span><span>FastAPI</span><span>3 tests</span>
+        </div>
+        <a class="link" href="https://github.com/HarshCodeK/megaproject">View repository <span class="arrow">→</span></a>
+      </article>
+
+    </div>
+
+    <!-- A TIER -->
+    <div style="margin-bottom:16px">
+      <div class="chip tier-A">A — Cross-Domain</div>
+    </div>
+    <div class="grid c2" style="margin-bottom:32px">
+
+      
+
+      <article class="panel reveal reveal-delay-1" data-tier="A">
+        <h3><a href="https://github.com/HarshCodeK/kay-kay">kay-kay</a> <span class="tier-badge a">A</span></h3>
+        <p>A small REST gateway with provider fallback, hashed API keys, conservative pre-request spend reservation, and request telemetry.</p>
+        <div class="tech">
+          <span>Python</span><span>FastAPI</span><span>SQLite</span><span>REST gateway</span><span>3 tests</span>
+        </div>
+        <a class="link" href="https://github.com/HarshCodeK/kay-kay">View repository <span class="arrow">→</span></a>
+      </article>
+
+    </div>
+      <article class="panel reveal" data-tier="A">
+        <div class="content">
+          <h3><a href="https://github.com/HarshCodeK/hybrid-log-classifier">hybrid-log-classifier</a> <span class="tier-badge a">A</span></h3>
+          <p>Three-tier log classification &mdash; regex, then ML, then LLM &mdash; where the ML tier
+          <strong>abstains</strong> instead of guessing, so the cost saving is verifiable. Lines sharing
+          an entity inside a 300-second window collapse into ranked incidents. A Java implementation of
+          the same rule is cross-checked against the Python one on every CI run.</p>
+          <div class="tech">
+            <span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>16 tests</span><span>Java</span>
+          </div>
+          <a class="link" href="https://github.com/HarshCodeK/hybrid-log-classifier">View repository <span class="arrow">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="panel reveal reveal-delay-1" data-tier="A">
+        <div class="content">
+          <h3><a href="https://github.com/HarshCodeK/multimodal-financial-assistant">multimodal-financial-assistant</a> <span class="tier-badge a">A</span></h3>
+          <p>Reads a receipt or invoice, extracts structured fields with a vision model, retrieves the
+          governing policy from ChromaDB, and <strong>refuses to answer when the policy does not cover
+          the question</strong>. That refusal is the point: an invented reason about money is worse
+          than no answer.</p>
+          <div class="tech">
+            <span>Python</span><span>ChromaDB</span><span>sentence-transformers</span><span>6 tests</span>
+          </div>
+          <a class="link" href="https://github.com/HarshCodeK/multimodal-financial-assistant">View repository <span class="arrow">&rarr;</span></a>
+        </div>
+      </article>
+
+<!-- HUB -->
+    <div style="margin-bottom:16px">
+      <div class="chip tier-L">Hub</div>
+    </div>
+    <div class="grid" style="margin-bottom:32px">
+
+      <article class="panel reveal" data-tier="hub">
+        <h3><a href="https://github.com/HarshCodeK/HarshCodeK">this site</a> <span class="tier-badge l">Hub</span></h3>
+        <p>Case studies, the evidence wall above, and a resume generated from the same measured
+        numbers. No metric on this page is typed by hand — every number traces to a repository's
+        <code>EVIDENCE.json</code>. Zero framework dependencies.</p>
+        <div class="tech">
+          <span>HTML</span><span>CSS</span><span>JS</span><span>GitHub Pages</span><span>zero framework</span>
+        </div>
+        <a class="link" href="resume.html">View resume <span class="arrow">→</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ HOW I WORK ═══ -->
+  <section id="how">
+    <h2>How I work</h2>
+    <p class="sub">Four rules that every repository follows. These are not aspirational — they are enforced
+    by CI and by the scaffolding tool that generates every repo.</p>
+    <div class="grid c2">
+      <div class="principle reveal">
+        <div class="num">01</div>
+        <h4>Deployed beats described</h4>
+        <p>Every repo has a landing page and a working dashboard. A screenshot is not a product.</p>
+      </div>
+      <div class="principle reveal reveal-delay-1">
+        <div class="num">02</div>
+        <h4>A number or it did not happen</h4>
+        <p>Each repo carries EVIDENCE.md with the command that reproduces every figure. Missing numbers are labelled missing.</p>
+      </div>
+      <div class="principle reveal reveal-delay-2">
+        <div class="num">03</div>
+        <h4>Tradeoffs are the deliverable</h4>
+        <p>Every repo documents the governing constraint, the options rejected, and what would change my mind.</p>
+      </div>
+      <div class="principle reveal reveal-delay-3">
+        <div class="num">04</div>
+        <h4>Explainable or excluded</h4>
+        <p>If I cannot defend a line cold, it does not go on the profile. Ownership is tracked per module.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT I DON'T BUILD ═══ -->
+  <section>
+    <h2>What I deliberately do not build</h2>
+    <ul class="anti-list">
+      <li>Todo apps, weather apps, calculators, e-commerce clones</li>
+      <li>Another RAG chatbot, or an AI feature without a trust boundary</li>
+      <li>Any claim without the command that reproduces it</li>
+      <li>A repository that repeats a pattern I already have</li>
+    </ul>
+  </section>
+
+  <!-- ═══ EVERY NUMBER ═══ -->
+  <section>
+    <h2>Every number, with its source</h2>
+    <div id="wall-table" class="panel" style="overflow-x:auto"></div>
+  </section>
+
+</div>
+
+<footer><div class="wrap"><div class="row">
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/HarshCodeK">github.com/HarshCodeK</a>
+  <span class="sep">·</span>
+  <a href="resume.html">resume</a>
+  <span style="margin-left:auto" class="muted small">numbers come from the repositories, not from this page</span>
+</div></div></footer>
+
+<script type="module">
+import { loadJSON, table, fail } from "./assets/house.js";
+
+// ── Evidence Wall ──
+try {
+  const repos = await loadJSON("data/evidence.json");
+  const wall = document.getElementById("wall");
+  wall.innerHTML = repos.map(function(r){
+    var cls = r.tier === "S" ? "accent" : r.tier === "A" ? "warn" : r.tier === "hub" ? "accent" : "info";
+    var tooltip = r.headline && r.headline[0] && r.headline[0].command
+      ? r.headline[0].command
+      : r.source ? "source: EVIDENCE.json" : "";
+    return '<div class="ev ' + cls + '" title="' + tooltip + '">'
+      + '<div class="v">' + (r.gate ? r.gate.tests_passed : 0) + '</div>'
+      + '<div class="l">' + r.repo + ' — tests passing (' + r.tier + ' tier)</div>'
+      + '<div class="c">' + (tooltip ? tooltip : "") + '</div></div>';
+  }).join("");
+  const rows = repos.flatMap(function(r){
+    return (r.rows||[]).map(function(x){
+      return { repo: r.repo, metric: x.metric, value: x.value, command: x.command };
+    });
+  });
+  document.getElementById("wall-table").innerHTML = table(rows, ["repo","metric","value","command"]);
+} catch (e) {
+  fail(document.getElementById("wall"), e);
+}
+
+// ── Tier filter ──
+document.querySelectorAll(".filter-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    this.classList.add("active");
+    var filter = this.dataset.filter;
+    document.querySelectorAll("#work .panel").forEach(function(panel){
+      var panelTier = panel.dataset.tier;
+      if (filter === "all" || panelTier === filter) {
+        panel.style.display = "";
+      } else {
+        panel.style.display = "none";
+      }
+    });
+  });
+});
+
+// ── Scroll Reveal ──
+const observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+document.querySelectorAll(".reveal").forEach(function(el){ observer.observe(el); });
+
+// ── Card mouse glow ──
+document.querySelectorAll(".panel").forEach(function(card){
+  card.addEventListener("mousemove", function(e){
+    var rect = card.getBoundingClientRect();
+    var x = ((e.clientX - rect.left) / rect.width) * 100;
+    var y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--mx", x + "%");
+    card.style.setProperty("--my", y + "%");
+  });
+});
+
+// ── Animated number count-up ──
+function animateValue(el, start, end, duration) {
+  var startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * (end - start) + start);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+document.querySelectorAll(".ev .v").forEach(function(el){
+  var val = parseInt(el.textContent, 10);
+  if (!isNaN(val) && val > 0) {
+    el.textContent = "0";
+    var obs = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting) {
+        animateValue(el, 0, val, 1200);
+        obs.disconnect();
+      }
+    }, { threshold: 0.5 });
+    obs.observe(el);
+  }
+});
+
+// ── Hero stat count-up ──
+function animateStatText(el, finalText, duration) {
+  var numeric = parseInt(finalText, 10);
+  if (isNaN(numeric)) return;
+  el.textContent = "0";
+  var startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * numeric);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var statObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if (entry.isIntersecting) {
+      var el = entry.target;
+      var final = el.textContent;
+      animateStatText(el, final, 1500);
+      statObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll(".stat-num").forEach(function(el){
+  statObs.observe(el);
+});
+</script>
+</body>
+</html>
