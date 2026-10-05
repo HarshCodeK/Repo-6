@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harsh Paresh Kharavle - resume</title>
+<link rel="stylesheet" href="assets/house.css">
+<style>
+  body{background:var(--ink)}
+  .sheet{max-width:820px;margin:0 auto;padding:34px 30px;background:var(--ink)}
+  .sheet h1{font-size:30px;margin:0 0 4px;letter-spacing:-.01em}
+  .sheet .contact{color:var(--muted);font-size:14px;margin-bottom:20px}
+  .sheet h2{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);
+    margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sheet ul{margin:0;padding-left:18px}
+  .sheet li{margin:5px 0;font-size:14.5px}
+  .sheet .role{font-weight:650}
+  .sheet .meta{color:var(--muted);font-size:13px;font-family:var(--mono)}
+  @media print{
+    body{background:#fff;color:#000}
+    .sheet{max-width:none;padding:0;background:#fff}
+    .sheet h2{color:#000;border-color:#bbb}
+    .sheet .contact,.sheet .meta{color:#444}
+    a{color:#000;text-decoration:none}
+    .noprint{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1>Harsh Paresh Kharavle</h1>
+  <div class="contact">AI Systems Engineer - Python / Java / Backend / Applied AI<br>
+  harsh.kharavle@gmail.com - github.com/HarshCodeK - linkedin.com/in/harsh-k-422932284</div>
+
+  <h2>Measured highlights</h2>
+  <ul>
+    <li><b>33 tests across five selected systems, with each current repository carrying an automated test suite</b>, with Python coverage across the selected systems; Docker is used where implemented.</li>
+    <li><b>A log classifier evaluated with grouped template holdouts.</b> The training script reports the random-split figure only as a leakage contrast, then trains the deployment model on the full dataset after grouped cross-validation.</li>
+    <li><b>A policy-grounded financial assistant.</b> Retrieval is conditioned on the user question and supporting document context; the system is explicit when the corpus does not cover the question.</li>
+    <li><b>A gateway with conservative pre-request spend reservations.</b> Provider fallback and usage telemetry are demonstrated with deterministic provider stubs; accounting is intentionally in memory in the current implementation.</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    <li><span class="role">hybrid-log-classifier</span> <span class="meta">Python, scikit-learn, FastAPI, Java</span><br>
+    Three-tier log classification &mdash; regex, then ML, then LLM &mdash; where the ML tier abstains
+    rather than guessing, so the cost saving is verifiable rather than asserted. Lines sharing an entity
+    inside a 300-second window collapse into ranked incidents. A Java implementation of the same incident-grouping rule is cross-checked against the Python implementation in CI.
+    <b>16 tests.</b></li>
+
+    <li><span class="role">multimodal-financial-assistant</span> <span class="meta">Python, ChromaDB, sentence-transformers, Groq</span><br>
+    Reads images with a vision model and parses text-based PDFs, then retrieves policy context from ChromaDB using the user question plus document fields. <b>6 tests.</b></li>
+
+    <li><span class="role">megaproject</span> <span class="meta">Python, FastAPI</span><br>
+    A sandboxed tool-calling boundary. Every path is resolved before containment is checked, and only read/list tools are exposed. The implementation explicitly does not claim OS-level sandboxing. <b>3 tests.</b></li>
+
+    <li><span class="role">kay-kay</span> <span class="meta">Python, FastAPI, SQLite</span><br>
+    A small REST gateway with provider fallback, SHA-256-hashed API keys, conservative spend reservation and request telemetry. <b>3 tests.</b></li>
+
+    <li><span class="role">recoup</span> <span class="meta">Python, SQLite</span><br>
+    A deterministic reconciliation core using integer paise, bounded timestamp matching and a separate recovery policy gate. <b>5 tests.</b> The evaluator is a small correctness smoke test, not a production benchmark.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <ul>
+    <li><b>Languages:</b> Python, Java, SQL</li>
+    <li><b>AI systems:</b> retrieval-augmented generation with ChromaDB and local embeddings, tool-calling
+    agents, LLM gateways with provider fallback and conservative spend reservations, multimodal extraction, evaluation harnesses</li>
+    <li><b>Backend:</b> FastAPI and REST APIs, SQLite, provider fallback and retry semantics, sandboxing and trust boundaries, cost accounting</li>
+    <li><b>Practice:</b> test-driven development, CI pipelines that build and start the artifact, Git,
+    Docker, prompt-version evaluation, documented limitations</li>
+  </ul>
+
+  <h2>Education</h2>
+  <ul>
+    <li><span class="role">B.Tech, Computer Science &amp; Engineering</span> <span class="meta">DIT University, Dehradun - 2023 to 2027 - CGPA 8.80/10</span><br>
+    Specialisation in Artificial Intelligence, Machine Learning and Robotics.
+    Coursework: data structures and algorithms, DBMS, operating systems, computer networks, OOP.</li>
+  </ul>
+
+  <p class="small muted" style="margin-top:22px">Test counts above refer to the current repository implementations and are recorded from the current repository state.</p>
+</div>
+<script>console.log("print this page to PDF: Ctrl+P, save as PDF, margins default");</script>
+</body>
+</html>
